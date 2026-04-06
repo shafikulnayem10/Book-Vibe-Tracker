@@ -8,74 +8,71 @@ import {
 export const BookContext = createContext();
 
 const BookProvider = ({ children }) => {
-  const [readList, setReadList] = useState(() => getAllReadListFromLocalDB());
+  const [readList, setReadList] = useState(() =>
+    getAllReadListFromLocalDB()
+  );
   const [wishList, setWishList] = useState([]);
 
-
-  console.log(readList, "readList");
-
+  
   const handleMarkAsRead = (currentBook) => {
-    // step 1: store book id or store book object
-    // step 2: where to store
-    // step 2: array or collection
-    //  step 3: If the book is already exist then show a alert or toast
-    // step 4: if not then add the book in the array or collection
-
-    addReadListToLocalDB(currentBook);
-
     const isExistBook = readList.find(
-      (book) => book.bookId === currentBook.bookId,
+      (book) => book.bookId === currentBook.bookId
     );
 
     if (isExistBook) {
-      toast.error("The book is already exist");
-    } else {
-      setReadList([...readList, currentBook]);
-      toast.success(`${currentBook.bookName} is added to read list`);
+      toast.error("Book already in Read List");
+      return;
     }
 
-    console.log(currentBook, readList, "book");
+    
+    addReadListToLocalDB(currentBook);
+    setReadList((prev) => [...prev, currentBook]);
+
+    
+    setWishList((prev) =>
+      prev.filter((book) => book.bookId !== currentBook.bookId)
+    );
+
+    toast.success(`${currentBook.bookName} added to Read List`);
   };
 
+  
   const handleWishList = (currentBook) => {
-    // step 1: store book id or store book object
-    // step 2: where to store
-    // step 2: array or collection
-    //  step 3: If the book is already exist then show a alert or toast
-    // step 4: if not then add the book in the array or collection
-
     const isExistInReadList = readList.find(
-      (book) => book.bookId === currentBook.bookId,
+      (book) => book.bookId === currentBook.bookId
     );
 
     if (isExistInReadList) {
-      toast.error("This book is already in read list");
+      toast.error("Already in Read List");
       return;
     }
 
     const isExistBook = wishList.find(
-      (book) => book.bookId === currentBook.bookId,
+      (book) => book.bookId === currentBook.bookId
     );
 
     if (isExistBook) {
-      toast.error("The book is already exist");
-    } else {
-      setWishList([...wishList, currentBook]);
-      toast.success(`${currentBook.bookName} is added to wish list`);
+      toast.error("Book already in Wishlist");
+      return;
     }
 
-    console.log(currentBook, readList, "book");
+    setWishList((prev) => [...prev, currentBook]);
+
+    toast.success(`${currentBook.bookName} added to Wishlist`);
   };
 
   const data = {
     readList,
-    setReadList,
-    handleMarkAsRead,
     wishList,
-    setWishList,
+    handleMarkAsRead,
     handleWishList,
   };
-  return <BookContext.Provider value={data}>{children}</BookContext.Provider>;
+
+  return (
+    <BookContext.Provider value={data}>
+      {children}
+    </BookContext.Provider>
+  );
 };
 
 export default BookProvider;

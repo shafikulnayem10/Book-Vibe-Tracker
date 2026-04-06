@@ -1,9 +1,12 @@
 import React from 'react'
+import Banner from '../../ui/Banner/Banner'
+import AllBooks from '../../ui/AllBooks/AllBooks'
 
 export default function HomePage() {
   return (
     <div>
-        <h1>HomePage</h1>
+      <Banner></Banner>
+      <AllBooks></AllBooks>
     </div>
   )
 }

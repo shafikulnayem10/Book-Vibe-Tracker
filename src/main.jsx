@@ -32,6 +32,7 @@ const router = createBrowserRouter([{
         element: <BookDetails></BookDetails>,
         loader : () => fetch("/booksData.json").then(res => res.json()),
       },
+     
 
     ],
     errorElement:<ErrorPage></ErrorPage>

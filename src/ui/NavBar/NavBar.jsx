@@ -8,7 +8,9 @@ const Navbar = () => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            `font-semibold mr-1 ${isActive ? "text-green-500 border border-green-500" : ""}`
+            `font-semibold px-3 py-1 rounded-md ${
+              isActive ? "text-green-500 border border-green-500" : "text-gray-700"
+            }`
           }
         >
           Home
@@ -16,64 +18,91 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          className={({ isActive }) =>
-            `font-semibold mr-1 ${isActive ? "text-green-500 border border-green-500" : ""}`
-          }
           to={"/books"}
+          className={({ isActive }) =>
+            `font-semibold px-3 py-1 rounded-md ${
+              isActive ? "text-green-500 border border-green-500" : "text-gray-700"
+            }`
+          }
         >
           Listed Books
         </NavLink>
       </li>
       <li>
         <NavLink
-          className={({ isActive }) =>
-            `font-semibold mr-1 ${isActive ? "text-green-500 border border-green-500" : ""}`
-          }
           to={"/error"}
+          className={({ isActive }) =>
+            `font-semibold px-3 py-1 rounded-md ${
+              isActive ? "text-green-500 border border-green-500" : "text-gray-700"
+            }`
+          }
         >
-         Error Page
+          Error Page
         </NavLink>
       </li>
     </>
   );
+
   return (
-    <nav className="bg-base-100 shadow-sm">
-      <div className="navbar container mx-auto  px-30">
+    <nav className="bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {" "}
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
-              </svg>
-            </div>
-            <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-            >
-              {links}
-            </ul>
+        <div className="flex items-center justify-between h-16">
+
+          {/* LEFT */}
+          <div className="flex items-center gap-2">
+            <h2 className="font-bold text-xl">Book Vibe</h2>
           </div>
-          <h2 className="font-bold text-xl">Book Vibe</h2>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
-        </div>
-        <div className="navbar-end gap-4 ">
-          <button className="btn btn-success text-white">Signin</button>
-          <button className="btn btn-accent text-white">Signup</button>
+
+          {/* CENTER (Desktop Menu) */}
+          <div className="hidden lg:flex">
+            <ul className="flex items-center gap-4">{links}</ul>
+          </div>
+
+          {/* RIGHT */}
+          <div className="hidden sm:flex items-center gap-3">
+            <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+              Signin
+            </button>
+            <button className="px-4 py-2 bg-emerald-400 text-white rounded-md hover:bg-emerald-500 transition">
+              Signup
+            </button>
+          </div>
+
+          {/* MOBILE MENU BUTTON */}
+          <div className="lg:hidden">
+            <details className="dropdown dropdown-end">
+              <summary className="btn btn-ghost p-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </summary>
+
+              <ul className="absolute right-0 mt-3 w-52 bg-white rounded-lg shadow-md p-3 space-y-2">
+                {links}
+                <div className="flex flex-col gap-2 mt-2">
+                  <button className="px-3 py-2 bg-green-500 text-white rounded-md">
+                    Signin
+                  </button>
+                  <button className="px-3 py-2 bg-emerald-400 text-white rounded-md">
+                    Signup
+                  </button>
+                </div>
+              </ul>
+            </details>
+          </div>
+
         </div>
       </div>
     </nav>

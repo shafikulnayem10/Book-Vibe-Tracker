@@ -7,6 +7,7 @@ import MainLayout from './Layout/MainLayout/MainLayout.jsx'
 import HomePage from './pages/HomePage/HomePage.jsx'
 import BooksPage from './pages/BooksPage/BooksPage.jsx'
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
+import BookDetails from './pages/BookDetails/BookDetails.jsx'
 
 const router = createBrowserRouter([{
    path: "/",
@@ -23,7 +24,12 @@ const router = createBrowserRouter([{
        {
         path:"/error",
         element: <ErrorPage></ErrorPage>
-       }
+       },
+      {
+        path: "/bookDetails/:bookId",
+        element: <BookDetails></BookDetails>,
+        loader : () => fetch("/booksData.json").then(res => res.json()),
+      },
 
     ],
     errorElement:<ErrorPage></ErrorPage>

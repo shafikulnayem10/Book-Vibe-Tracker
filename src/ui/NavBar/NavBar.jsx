@@ -10,9 +10,7 @@ const Navbar = () => {
           end
           className={({ isActive }) =>
             `font-semibold px-3 py-1 rounded-md ${
-              isActive
-                ? "text-green-500 border border-green-500"
-                : "text-gray-700"
+              isActive ? "text-green-500 border border-green-500" : "text-gray-700"
             }`
           }
         >
@@ -25,9 +23,7 @@ const Navbar = () => {
           to="/books"
           className={({ isActive }) =>
             `font-semibold px-3 py-1 rounded-md ${
-              isActive
-                ? "text-green-500 border border-green-500"
-                : "text-gray-700"
+              isActive ? "text-green-500 border border-green-500" : "text-gray-700"
             }`
           }
         >
@@ -40,9 +36,7 @@ const Navbar = () => {
           to="/pages-to-read"
           className={({ isActive }) =>
             `font-semibold px-3 py-1 rounded-md ${
-              isActive
-                ? "bg-green-500 text-white"
-                : "text-gray-700"
+              isActive ? "bg-green-500 text-white" : "text-gray-700"
             }`
           }
         >
@@ -65,15 +59,7 @@ const Navbar = () => {
             <ul className="flex items-center gap-4">{getLinks()}</ul>
           </div>
 
-          <div className="hidden sm:flex items-center gap-3">
-            <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
-              Signin
-            </button>
-            <button className="px-4 py-2 bg-emerald-400 text-white rounded-md hover:bg-emerald-500 transition">
-              Signup
-            </button>
-          </div>
-
+          {/* MOBILE MENU */}
           <div className="lg:hidden">
             <details className="dropdown dropdown-end">
               <summary className="btn btn-ghost p-2">
@@ -83,10 +69,6 @@ const Navbar = () => {
               </summary>
               <ul className="absolute right-0 mt-3 w-52 bg-white rounded-lg shadow-md p-3 space-y-2">
                 {getLinks()}
-                <div className="flex flex-col gap-2 mt-2">
-                  <button className="px-3 py-2 bg-green-500 text-white rounded-md">Signin</button>
-                  <button className="px-3 py-2 bg-emerald-400 text-white rounded-md">Signup</button>
-                </div>
               </ul>
             </details>
           </div>

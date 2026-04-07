@@ -4,10 +4,8 @@ import { Link } from "react-router";
 
 const BookCard = ({ book }) => {
   return (
-    <Link
-      to={`/bookDetails/${book.bookId}`}
-      className="block bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden"
-    >
+    <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
+
       {/* IMAGE */}
       <div className="p-4 sm:p-6">
         <img
@@ -18,7 +16,7 @@ const BookCard = ({ book }) => {
       </div>
 
       {/* CONTENT */}
-      <div className="px-4 pb-4 sm:px-6 sm:pb-6 space-y-3">
+      <div className="px-4 sm:px-6 space-y-3 flex-1">
 
         {/* TAGS */}
         <div className="flex flex-wrap gap-2">
@@ -42,12 +40,11 @@ const BookCard = ({ book }) => {
           {book.author}
         </p>
 
-        {/* FOOTER */}
+        {/* RATING & CATEGORY */}
         <div className="flex items-center justify-between border-t border-dashed pt-3 text-sm sm:text-base">
           <span className="font-semibold text-gray-700">
             {book.category}
           </span>
-
           <div className="flex items-center gap-1 font-medium text-gray-700">
             {book.rating}
             <FaRegStar className="text-yellow-500" />
@@ -55,7 +52,18 @@ const BookCard = ({ book }) => {
         </div>
 
       </div>
-    </Link>
+
+      {/* BOOK DETAILS BUTTON */}
+      <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-3">
+        <Link
+          to={`/bookDetails/${book.bookId}`}
+          className="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition text-sm sm:text-base"
+        >
+          Book Details
+        </Link>
+      </div>
+
+    </div>
   );
 };
 

@@ -24,6 +24,7 @@ const BookDetails = () => {
     tags,
     publisher,
     yearOfPublishing,
+    buyLink,
   } = expectedBook;
 
   const { handleMarkAsRead, handleWishList } = useContext(BookContext);
@@ -106,6 +107,15 @@ const BookDetails = () => {
             >
               Add to Wishlist
             </button>
+
+            <a
+              href={buyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-md transition text-center"
+            >
+              Buy Now
+            </a>
           </div>
 
         </div>

@@ -10,7 +10,8 @@
     "category": "Classic",
     "tags": ["Fiction", "Romance"],
     "publisher": "Scribner",
-    "yearOfPublishing": 1925
+    "yearOfPublishing": 1925,
+    "buyLink": "https://www.amazon.com/dp/0743273567"
   },
   {
     "bookId": 2,
@@ -23,7 +24,8 @@
     "category": "Fiction",
     "tags": ["Drama", "Social Justice"],
     "publisher": "J.B. Lippincott & Co.",
-    "yearOfPublishing": 1960
+    "yearOfPublishing": 1960,
+    "buyLink": "https://www.amazon.com/dp/0061935468"
   },
   {
     "bookId": 3,
@@ -36,7 +38,8 @@
     "category": "Fiction",
     "tags": ["Dystopian", "Political"],
     "publisher": "Secker & Warburg",
-    "yearOfPublishing": 1949
+    "yearOfPublishing": 1949,
+    "buyLink": "https://www.amazon.com/dp/0451524934"
   },
   {
     "bookId": 4,
@@ -49,7 +52,8 @@
     "category": "Fiction",
     "tags": ["Young Adult", "Identity"],
     "publisher": "Little, Brown and Company",
-    "yearOfPublishing": 1951
+    "yearOfPublishing": 1951,
+    "buyLink": "https://www.amazon.com/dp/0316769487"
   },
   {
     "bookId": 5,
@@ -62,7 +66,8 @@
     "category": "Classic",
     "tags": ["Romance", "Satire"],
     "publisher": "T. Egerton, Whitehall",
-    "yearOfPublishing": 1813
+    "yearOfPublishing": 1813,
+    "buyLink": "https://www.amazon.com/dp/0141439513"
   },
   {
     "bookId": 6,
@@ -75,7 +80,8 @@
     "category": "Fantasy",
     "tags": ["Adventure", "Epic"],
     "publisher": "Allen & Unwin",
-    "yearOfPublishing": 1937
+    "yearOfPublishing": 1937,
+    "buyLink": "https://www.amazon.com/dp/054792822X"
   },
   {
     "bookId": 7,
@@ -88,7 +94,8 @@
     "category": "Fantasy",
     "tags": ["Magic", "Young Adult"],
     "publisher": "Bloomsbury",
-    "yearOfPublishing": 1997
+    "yearOfPublishing": 1997,
+    "buyLink": "https://www.amazon.com/dp/059035342X"
   },
   {
     "bookId": 8,
@@ -101,7 +108,8 @@
     "category": "Fiction",
     "tags": ["Philosophical", "Adventure"],
     "publisher": "HarperCollins",
-    "yearOfPublishing": 1988
+    "yearOfPublishing": 1988,
+    "buyLink": "https://www.amazon.com/dp/0062315005"
   },
   {
     "bookId": 9,
@@ -114,6 +122,7 @@
     "category": "Mystery",
     "tags": ["Suspense", "Psychological"],
     "publisher": "Riverhead Books",
-    "yearOfPublishing": 2015
+    "yearOfPublishing": 2015,
+    "buyLink": "https://www.amazon.com/dp/1594634025"
   }
 ]
